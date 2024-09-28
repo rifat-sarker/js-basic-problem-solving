@@ -77,25 +77,47 @@ function outerFunction() {
 const closure = outerFunction();
 closure(); // Hello
 
-
-function closuresFunction (a){
-    function f(b) {
-        const sum = a + b;
-        return sum;
-    }
-    return f;
+function closuresFunction(a) {
+  function f(b) {
+    const sum = a + b;
+    return sum;
+  }
+  return f;
 }
 
 const resultClosure = closuresFunction(10);
-console.log(resultClosure(3))     //13
-
-
+console.log(resultClosure(3)); //13
 
 // Arrow Syntax
 // The other common way to declare functions is with arrow syntax. In fact, on many projects, it is the preferred syntax
 
 const arrowFunction = (a, b) => {
-    const sum = a + b;
-    return sum;
+  const sum = a + b;
+  return sum;
 };
 console.log(arrowFunction(3, 4)); // 7
+
+
+
+
+
+
+// Omit Return
+// If you can write the code in a single line, you can omit the return keyword. This can result in very short code.
+
+const f1 = (a, b) => a + b;
+// console.log(f1(3, 4)); // 7
+
+
+
+
+
+// Rest Arguments
+// You can use rest syntax to access all the passed arguments as an array. This isn't necessary for this problem, but it will be a critical concept for many problems.
+
+
+function f(...args) {
+    const sum = args[0] + args[1];
+    return sum;
+}
+// console.log(f(3, 4)); // 7
