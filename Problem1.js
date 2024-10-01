@@ -116,8 +116,21 @@ const f1 = (a, b) => a + b;
 // You can use rest syntax to access all the passed arguments as an array. This isn't necessary for this problem, but it will be a critical concept for many problems.
 
 
-function f(...args) {
+function f5(...args) {
     const sum = args[0] + args[1];
     return sum;
 }
-// console.log(f(3, 4)); // 7
+// console.log(f5(3, 4)); // 7
+
+
+
+function log(inputFunction) {
+    return function(...args) {
+        console.log("Input", args);
+        const result = inputFunction(...args);
+        console.log("Output", result);
+        return result;
+    }
+}
+const f3 = log((a, b) => a + b);
+f3(1, 2); // Logs: Input [1, 2] Output 3
