@@ -134,3 +134,17 @@ function log(inputFunction) {
 }
 const f3 = log((a, b) => a + b);
 f3(1, 2); // Logs: Input [1, 2] Output 3
+
+
+
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+function inputField(callback){
+  const name = prompt("Enter you name")
+  console.log(name)
+  callback(name);
+}
+
+inputField(greet); // Logs: Hello, user!
